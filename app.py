@@ -4,12 +4,12 @@ import json
 app = Flask(__name__)
 
 
-def joke_fetcher():
-
-    url = 'https://official-joke-api.appspot.com/random_joke'
-    response = requests.get(url)
-    data = json.loads(response.text)
-    return data
+# def joke_fetcher():
+#
+#     url = 'https://official-joke-api.appspot.com/random_joke'
+#     response = requests.get(url)
+#     data = json.loads(response.text)
+#     return data
 
 @app.route('/', methods=['GET', 'POST'])
 def main_page():  # put application's code here
@@ -33,5 +33,3 @@ if __name__ == '__main__':
 
 
 
-if __name__ == '__main__':
-    app.run()
