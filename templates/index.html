@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Joke Generator</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+<h1>Joke Generator</h1>
+<div id="joke"></div>
+<button onclick="getJoke()">Get Joke</button>
+<script>
+    function getJoke() {
+        fetch('/joke')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('joke').innerHTML = data.joke;
+            });
+    }
+</script>
+</body>
+</html>
